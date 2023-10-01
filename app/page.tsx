@@ -2,9 +2,10 @@ import Link from 'next/link'
 
 export default function Home() {
 	return (
-		<main>
-			<h1>Home</h1>
-			<Link href='/users'>Users</Link>
+		<main className='flex justify-center items-center flex-col'>
+			<Link href='/users' className='btn btn-primary'>
+				Users
+			</Link>
 		</main>
 	)
 }

@@ -1,18 +1,18 @@
 import { NextPage } from 'next'
+import UserItem from '../components/UserItem'
 import { UserServices } from '../services/UserServices'
 
 const UsersPage: NextPage = async () => {
 	const users = await UserServices.getAll()
 
 	return (
-		<div>
-			<h1>Users</h1>
-			<ul>
+		<main className='p-12'>
+			<div className='grid grid-cols-8 mt-8'>
 				{users.map(user => (
-					<li key={user.id}>{user.name}</li>
+					<UserItem key={user.id} user={user} />
 				))}
-			</ul>
-		</div>
+			</div>
+		</main>
 	)
 }
 
